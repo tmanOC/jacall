@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NetworkHandler.h"
 @interface ViewController : UIViewController
-
+-(instancetype)initWithNetworkHandler:(NetworkHandler*)handlerNetwork;
 
 @end
 

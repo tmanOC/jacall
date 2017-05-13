@@ -8,17 +8,27 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "NetworkHandler.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+static NSString* url_string = @"https://jsonplaceholder.typicode.com";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NetworkHandler * handler_network = [[NetworkHandler alloc] initWithURLString:url_string];
+    
+    //AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    //policy.allowInvalidCertificates = NO;
+    //manager.securityPolicy = policy;
+    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    [self.window setRootViewController:[ViewController new]];
+    self.window.tintColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.5 alpha:1.0];
+    [self.window setRootViewController:[[ViewController alloc] initWithNetworkHandler:handler_network]];
     [self.window makeKeyAndVisible];
     return YES;
 }

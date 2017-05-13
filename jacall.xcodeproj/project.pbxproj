@@ -10,10 +10,12 @@
 		04CF1F541EC759D20094C0C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F531EC759D20094C0C0 /* main.m */; };
 		04CF1F571EC759D20094C0C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F561EC759D20094C0C0 /* AppDelegate.m */; };
 		04CF1F5A1EC759D20094C0C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F591EC759D20094C0C0 /* ViewController.m */; };
-		04CF1F5D1EC759D20094C0C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CF1F5B1EC759D20094C0C0 /* Main.storyboard */; };
 		04CF1F5F1EC759D20094C0C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CF1F5E1EC759D20094C0C0 /* Assets.xcassets */; };
-		04CF1F621EC759D20094C0C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CF1F601EC759D20094C0C0 /* LaunchScreen.storyboard */; };
 		04CF1F6D1EC759D20094C0C0 /* jacallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F6C1EC759D20094C0C0 /* jacallTests.m */; };
+		04CF1F781EC75A070094C0C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CF1F771EC75A070094C0C0 /* LaunchScreen.xib */; };
+		04CF1F7B1EC764420094C0C0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F7A1EC764420094C0C0 /* UIView+Frame.m */; };
+		04CF1F801EC7819D0094C0C0 /* UIButton+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F7F1EC7819D0094C0C0 /* UIButton+Attributes.m */; };
+		04CF1F831EC78CF30094C0C0 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F821EC78CF30094C0C0 /* ColorButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +35,18 @@
 		04CF1F561EC759D20094C0C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04CF1F581EC759D20094C0C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		04CF1F591EC759D20094C0C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04CF1F5C1EC759D20094C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04CF1F5E1EC759D20094C0C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04CF1F611EC759D20094C0C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CF1F631EC759D20094C0C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CF1F681EC759D20094C0C0 /* jacallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jacallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CF1F6C1EC759D20094C0C0 /* jacallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jacallTests.m; sourceTree = "<group>"; };
 		04CF1F6E1EC759D20094C0C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CF1F771EC75A070094C0C0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		04CF1F791EC764420094C0C0 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		04CF1F7A1EC764420094C0C0 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		04CF1F7E1EC7819D0094C0C0 /* UIButton+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Attributes.h"; sourceTree = "<group>"; };
+		04CF1F7F1EC7819D0094C0C0 /* UIButton+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Attributes.m"; sourceTree = "<group>"; };
+		04CF1F811EC78CF30094C0C0 /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		04CF1F821EC78CF30094C0C0 /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,15 +88,20 @@
 		04CF1F511EC759D20094C0C0 /* jacall */ = {
 			isa = PBXGroup;
 			children = (
+				04CF1F811EC78CF30094C0C0 /* ColorButton.h */,
+				04CF1F821EC78CF30094C0C0 /* ColorButton.m */,
+				04CF1F791EC764420094C0C0 /* UIView+Frame.h */,
+				04CF1F7A1EC764420094C0C0 /* UIView+Frame.m */,
+				04CF1F771EC75A070094C0C0 /* LaunchScreen.xib */,
 				04CF1F551EC759D20094C0C0 /* AppDelegate.h */,
 				04CF1F561EC759D20094C0C0 /* AppDelegate.m */,
 				04CF1F581EC759D20094C0C0 /* ViewController.h */,
 				04CF1F591EC759D20094C0C0 /* ViewController.m */,
-				04CF1F5B1EC759D20094C0C0 /* Main.storyboard */,
 				04CF1F5E1EC759D20094C0C0 /* Assets.xcassets */,
-				04CF1F601EC759D20094C0C0 /* LaunchScreen.storyboard */,
 				04CF1F631EC759D20094C0C0 /* Info.plist */,
 				04CF1F521EC759D20094C0C0 /* Supporting Files */,
+				04CF1F7E1EC7819D0094C0C0 /* UIButton+Attributes.h */,
+				04CF1F7F1EC7819D0094C0C0 /* UIButton+Attributes.m */,
 			);
 			path = jacall;
 			sourceTree = "<group>";
@@ -195,9 +207,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CF1F621EC759D20094C0C0 /* LaunchScreen.storyboard in Resources */,
+				04CF1F781EC75A070094C0C0 /* LaunchScreen.xib in Resources */,
 				04CF1F5F1EC759D20094C0C0 /* Assets.xcassets in Resources */,
-				04CF1F5D1EC759D20094C0C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +226,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CF1F7B1EC764420094C0C0 /* UIView+Frame.m in Sources */,
+				04CF1F831EC78CF30094C0C0 /* ColorButton.m in Sources */,
 				04CF1F5A1EC759D20094C0C0 /* ViewController.m in Sources */,
 				04CF1F571EC759D20094C0C0 /* AppDelegate.m in Sources */,
 				04CF1F541EC759D20094C0C0 /* main.m in Sources */,
+				04CF1F801EC7819D0094C0C0 /* UIButton+Attributes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,25 +252,6 @@
 			targetProxy = 04CF1F691EC759D20094C0C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		04CF1F5B1EC759D20094C0C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04CF1F5C1EC759D20094C0C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04CF1F601EC759D20094C0C0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04CF1F611EC759D20094C0C0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04CF1F6F1EC759D20094C0C0 /* Debug */ = {

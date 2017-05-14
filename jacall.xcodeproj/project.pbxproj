@@ -238,7 +238,6 @@
 				TargetAttributes = {
 					04CF1F4E1EC759D20094C0C0 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Y4CJ5A6WXU;
 						ProvisioningStyle = Automatic;
 					};
 					04CF1F671EC759D20094C0C0 = {
@@ -464,7 +463,7 @@
 			baseConfigurationReference = E976DE7944DBF00D869CBF34 /* Pods-jacall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y4CJ5A6WXU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = jacall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foo.jacall;
@@ -477,7 +476,7 @@
 			baseConfigurationReference = 33C1E18AD62417CC10D12819 /* Pods-jacall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y4CJ5A6WXU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = jacall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foo.jacall;

@@ -11,7 +11,7 @@
 #import "UIButton+Attributes.h"
 #import "ColorButton.h"
 #import "UIViewController+Loader.h"
-
+#import "UIViewController+Alert.h"
 @interface ViewController ()
 
 @end
@@ -22,6 +22,7 @@
     
     NetworkHandler* handler_network;
 }
+#pragma mark initialisation and views
 -(instancetype)initWithNetworkHandler:(NetworkHandler*)handlerNetwork {
     self = [super init];
     if(self == nil) {
@@ -46,10 +47,10 @@
     button_names.backgroundColor = [UIColor whiteColor];
     button_names.layer.cornerRadius = button_names.height / 2.0;
     UIColor* colour_touched = [UIColor colorWithRed:0.1 green:0.1 blue:0.2 alpha:1.0];
-    [button_names setTouchTitle:@"List Names" colour:colour_navy colourTouched:colour_touched font:[UIFont systemFontOfSize:17.0 weight:UIFontWeightSemibold]];
+    [button_names setTouchTitle:@"Show Names of Users" colour:colour_navy colourTouched:colour_touched font:[UIFont systemFontOfSize:17.0 weight:UIFontWeightSemibold]];
     
     button_email = [[ColorButton alloc] initWithFrame:CGRectMake(margin, self.view.height - height_button - margin, self.view.width - 2 * margin, height_button)];
-    [button_email setTouchTitle:@"Samantha's Email" colour:colour_navy colourTouched:colour_touched font:[UIFont systemFontOfSize:17.0 weight:UIFontWeightSemibold]];
+    [button_email setTouchTitle:@"Show User's Email" colour:colour_navy colourTouched:colour_touched font:[UIFont systemFontOfSize:17.0 weight:UIFontWeightSemibold]];
     button_email.colour = [UIColor whiteColor];
     button_email.colour_selected = [UIColor lightGrayColor];
     button_email.backgroundColor = [UIColor whiteColor];
@@ -61,30 +62,26 @@
     [button_email addTarget:self action:@selector(getUsersSpecificEmail) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view, typically from a nib.
 }
--(void)presentOKAlertWithTitle:(NSString*)title message:(NSString*)message {
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        ;
-    }]];
-    [self presentViewController:alert animated:true completion:nil];
-}
--(NSString*)getNameFromUser:(id)user {
+#pragma mark response processing
+
+-(NSString*)getNameFromUser:(NSObject*)user {
     if(![user isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
-    return user[@"name"];
+    return ((NSDictionary*)user)[@"name"];
 }
--(NSString*)getEmailFromUser:(id)user {
+
+-(NSString*)getEmailFromUser:(NSObject*)user {
     if(![user isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
-    return user[@"email"];
+    return ((NSDictionary*)user)[@"email"];
 }
--(bool)isUserSamantha:(id)user {
+-(bool)isUserSamantha:(NSObject*)user {
     if(![user isKindOfClass:[NSDictionary class]]) {
         return false;
     }
-    return [user[@"username"] isEqualToString:@"Samantha"];
+    return [((NSDictionary*)user)[@"username"] isEqualToString:@"Samantha"];
 }
 
 -(NSString*)getNamesFromResponse:(id)response {
@@ -94,7 +91,7 @@
     }
     NSArray* array_users = (NSArray*) response;
     NSString* result = @"Names:";
-    for(id object in array_users) {
+    for(NSObject* object in array_users) {
         NSString* name = [self getNameFromUser:object];
         if(name != nil) {
             result = [NSString stringWithFormat:@"%@\n%@",result,name];
@@ -110,7 +107,7 @@
     }
     NSArray* array_users = (NSArray*) response;
     NSString* result = @"Samantha's email address:\n";
-    for(id object in array_users) {
+    for(NSObject* object in array_users) {
         if(![self isUserSamantha:object]) {
             continue;
         }
@@ -119,45 +116,43 @@
     return result;
 }
 
--(void)getUsersNames {
+#pragma mark general response handler
+-(void)handleNetworkResponse:(id) response error:(NSError*)error responseBlock:(NSString* (^)(id response))responseBlock {
+    if(error != nil) {
+        [self presentOKAlertWithTitle:@"Error" message:error.localizedDescription];
+        return;
+    }
+    if(response == nil) {
+        [self presentOKAlertWithTitle:@"Error" message:@"Empty response"];
+        return;
+    }
+    NSString* message = responseBlock(response);
+    if(message == nil) {
+        [self presentOKAlertWithTitle:@"Error" message:@"Failed to parse response"];
+        return;
+    }
+    [self presentOKAlertWithTitle:@"Message" message:message];
+}
+
+#pragma mark user api
+-(void)getUsersWithResponseBlock:(NSString* (^)(id response))responseBlock {
     [self showLoader];
     [handler_network requestGetUsersWithCompletion:^(id response, NSError *error) {
         [self hideLoader];
-        if(error != nil) {
-            [self presentOKAlertWithTitle:@"Error" message:error.localizedDescription];
-            return;
-        }
-        if(response == nil) {
-            [self presentOKAlertWithTitle:@"Error" message:@"Empty response"];
-            return;
-        }
-        NSString* message = [self getNamesFromResponse:response];
-        if(message == nil) {
-            [self presentOKAlertWithTitle:@"Error" message:@"Failed to parse response"];
-            return;
-        }
-        [self presentOKAlertWithTitle:@"Message" message:message];
+        [self handleNetworkResponse:response error:error responseBlock:responseBlock];
+    }];
+}
+
+#pragma mark button actions
+-(void)getUsersNames {
+    [self getUsersWithResponseBlock:^NSString *(id response) {
+        return [self getNamesFromResponse:response];
     }];
 }
 
 -(void)getUsersSpecificEmail {
-    [self showLoader];
-    [handler_network requestGetUsersWithCompletion:^(id response, NSError *error) {
-        [self hideLoader];
-        if(error != nil) {
-            [self presentOKAlertWithTitle:@"Error" message:error.localizedDescription];
-            return;
-        }
-        if(response == nil) {
-            [self presentOKAlertWithTitle:@"Error" message:@"Empty response"];
-            return;
-        }
-        NSString* message = [self getEmailFromResponse:response];
-        if(message == nil) {
-            [self presentOKAlertWithTitle:@"Error" message:@"Failed to parse response"];
-            return;
-        }
-        [self presentOKAlertWithTitle:@"Message" message:message];
+    [self getUsersWithResponseBlock:^NSString *(id response) {
+        return [self getEmailFromResponse:response];
     }];
 }
 

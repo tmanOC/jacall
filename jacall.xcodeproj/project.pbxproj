@@ -18,6 +18,7 @@
 		04CF1F831EC78CF30094C0C0 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F821EC78CF30094C0C0 /* ColorButton.m */; };
 		04CF1F881EC798260094C0C0 /* NetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F871EC798260094C0C0 /* NetworkHandler.m */; };
 		04CF1F8C1EC850670094C0C0 /* UIViewController+Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F8B1EC850670094C0C0 /* UIViewController+Loader.m */; };
+		04CF1F8F1EC85E2D0094C0C0 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CF1F8E1EC85E2D0094C0C0 /* UIViewController+Alert.m */; };
 		9049D76273D893785B99C0D1 /* libPods-jacall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 471D6D7CB288731D7AD80864 /* libPods-jacall.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		04CF1F871EC798260094C0C0 /* NetworkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHandler.m; sourceTree = "<group>"; };
 		04CF1F8A1EC850670094C0C0 /* UIViewController+Loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Loader.h"; sourceTree = "<group>"; };
 		04CF1F8B1EC850670094C0C0 /* UIViewController+Loader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Loader.m"; sourceTree = "<group>"; };
+		04CF1F8D1EC85E2D0094C0C0 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		04CF1F8E1EC85E2D0094C0C0 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		33C1E18AD62417CC10D12819 /* Pods-jacall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jacall.release.xcconfig"; path = "Pods/Target Support Files/Pods-jacall/Pods-jacall.release.xcconfig"; sourceTree = "<group>"; };
 		471D6D7CB288731D7AD80864 /* libPods-jacall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jacall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E976DE7944DBF00D869CBF34 /* Pods-jacall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jacall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jacall/Pods-jacall.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 			children = (
 				04CF1F8A1EC850670094C0C0 /* UIViewController+Loader.h */,
 				04CF1F8B1EC850670094C0C0 /* UIViewController+Loader.m */,
+				04CF1F8D1EC85E2D0094C0C0 /* UIViewController+Alert.h */,
+				04CF1F8E1EC85E2D0094C0C0 /* UIViewController+Alert.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				04CF1F7B1EC764420094C0C0 /* UIView+Frame.m in Sources */,
 				04CF1F831EC78CF30094C0C0 /* ColorButton.m in Sources */,
 				04CF1F5A1EC759D20094C0C0 /* ViewController.m in Sources */,
+				04CF1F8F1EC85E2D0094C0C0 /* UIViewController+Alert.m in Sources */,
 				04CF1F8C1EC850670094C0C0 /* UIViewController+Loader.m in Sources */,
 				04CF1F571EC759D20094C0C0 /* AppDelegate.m in Sources */,
 				04CF1F881EC798260094C0C0 /* NetworkHandler.m in Sources */,

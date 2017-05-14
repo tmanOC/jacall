@@ -10,6 +10,7 @@
 #import "UIView+Frame.h"
 #import "UIButton+Attributes.h"
 #import "ColorButton.h"
+#import "UIViewController+Loader.h"
 
 @interface ViewController ()
 
@@ -101,6 +102,7 @@
     }
     return result;
 }
+
 -(NSString*)getEmailFromResponse:(id)response {
     NSLog(@"%@",response);
     if(![response isKindOfClass:[NSArray class]]) {
@@ -116,8 +118,11 @@
     }
     return result;
 }
+
 -(void)getUsersNames {
+    [self showLoader];
     [handler_network requestGetUsersWithCompletion:^(id response, NSError *error) {
+        [self hideLoader];
         if(error != nil) {
             [self presentOKAlertWithTitle:@"Error" message:error.localizedDescription];
             return;
@@ -136,7 +141,9 @@
 }
 
 -(void)getUsersSpecificEmail {
+    [self showLoader];
     [handler_network requestGetUsersWithCompletion:^(id response, NSError *error) {
+        [self hideLoader];
         if(error != nil) {
             [self presentOKAlertWithTitle:@"Error" message:error.localizedDescription];
             return;
@@ -153,12 +160,5 @@
         [self presentOKAlertWithTitle:@"Message" message:message];
     }];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
